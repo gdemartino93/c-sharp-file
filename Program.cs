@@ -1,5 +1,6 @@
 ﻿namespace c_sharp_file
 {
+    using System;
     using System.IO;
     using System.Security.Cryptography;
 
@@ -29,7 +30,15 @@
                 {
                     case Opzioni.No:
                         Console.WriteLine("Il file non è stato sovrascritto. E' stato creato un nuovo file.");
-                        nomeFile = nomeFile + "asd";
+
+                        //gestiamo l'univocità del nome del file
+
+                        byte[] randomBytes = new byte[10];
+                        RandomNumberGenerator.Fill(randomBytes);
+   
+                        string randomString = BitConverter.ToString(randomBytes);//convertiamo gli array di bytes in stringa esa
+
+                        nomeFile = randomString;
                         filePath = $@"c:\Users\gdema\Desktop\csharp\{nomeFile}.txt";
                         File.WriteAllText($"{filePath}",contenutoFile);
                         break;
