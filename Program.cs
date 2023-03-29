@@ -5,14 +5,12 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Inserisci il nome del file che vuoi creare");
+            Console.WriteLine("Inserisci il nome del file da creare");
             string nomeFile = Console.ReadLine();
             Console.WriteLine("Inserisci il contenuto del file");
-            string? contenuto = Console.ReadLine();
-            File.WriteAllText($"{nomeFile}.txt", contenuto == "" ? "File vuoto" : contenuto);
+            string contenutoFile = Console.ReadLine();
 
-            string leggiFile = File.ReadAllText($"{nomeFile}.txt");
-            Console.WriteLine(leggiFile);
+            File.WriteAllText($@"c:\Users\gdema\Desktop\csharp\{nomeFile}.txt",contenutoFile);
         }
     }
 }
