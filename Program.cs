@@ -1,6 +1,8 @@
 ﻿namespace c_sharp_file
 {
     using System.IO;
+    using System.Security.Cryptography;
+
     internal class Program
     {
         enum Opzioni
@@ -26,7 +28,10 @@
                 switch (risposta)
                 {
                     case Opzioni.No:
-                        Console.WriteLine("Il file non è stato sovrascritto");
+                        Console.WriteLine("Il file non è stato sovrascritto. E' stato creato un nuovo file.");
+                        nomeFile = nomeFile + "asd";
+                        filePath = $@"c:\Users\gdema\Desktop\csharp\{nomeFile}.txt";
+                        File.WriteAllText($"{filePath}",contenutoFile);
                         break;
                     case Opzioni.Si:
                         File.WriteAllText($"{filePath}", contenutoFile);
