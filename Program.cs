@@ -23,14 +23,18 @@
             {
                 Console.WriteLine("File già esistente. Vuoi sovrascriverlo? Si/No");
                 Opzioni risposta = (Opzioni)Enum.Parse(typeof(Opzioni), Console.ReadLine(), true);
-                if (risposta == Opzioni.No)
+                switch (risposta)
                 {
-                    Console.WriteLine("Il file non è stato sovrascritto.");
-                    return;
+                    case Opzioni.No:
+                        Console.WriteLine("Il file non è stato sovrascritto");
+                        break;
+                    case Opzioni.Yes:
+                        Console.WriteLine("Il file è stato sovrascritto");
+                        break;
                 }
+               
             }
 
-            File.WriteAllText($@"c:\Users\gdema\Desktop\csharp\{nomeFile}.txt",contenutoFile);
         }
     }
 }
