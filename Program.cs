@@ -6,7 +6,7 @@
         enum Opzioni
         {
             No,
-            Yes
+            Si
             
         }
         static void Main(string[] args)
@@ -28,7 +28,8 @@
                     case Opzioni.No:
                         Console.WriteLine("Il file non è stato sovrascritto");
                         break;
-                    case Opzioni.Yes:
+                    case Opzioni.Si:
+                        File.WriteAllText($"{filePath}", contenutoFile);
                         Console.WriteLine("Il file è stato sovrascritto");
                         break;
                 }
