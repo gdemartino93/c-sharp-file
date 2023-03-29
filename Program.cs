@@ -41,13 +41,19 @@
                         nomeFile = randomString;
                         filePath = $@"c:\Users\gdema\Desktop\csharp\{nomeFile}.txt";
                         File.WriteAllText($"{filePath}",contenutoFile);
+       
                         break;
                     case Opzioni.Si:
                         File.WriteAllText($"{filePath}", contenutoFile);
+      
                         Console.WriteLine("Il file è stato sovrascritto");
                         break;
                 }
-               
+
+            }
+            else
+            {
+                File.WriteAllText($"{filePath}", contenutoFile);
             }
 
         }
