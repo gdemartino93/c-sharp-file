@@ -36,7 +36,7 @@
                         byte[] randomBytes = new byte[10];
                         RandomNumberGenerator.Fill(randomBytes);
    
-                        string randomString = BitConverter.ToString(randomBytes);//convertiamo gli array di bytes in stringa esa
+                        string randomString = BitConverter.ToString(randomBytes).Replace("-","");//convertiamo gli array di bytes in stringa esa
 
                         nomeFile = randomString;
                         filePath = $@"c:\Users\gdema\Desktop\csharp\{nomeFile}.txt";
