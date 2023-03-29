@@ -10,6 +10,9 @@
             Console.WriteLine("Inserisci il contenuto del file");
             string? contenuto = Console.ReadLine();
             File.WriteAllText($"{nomeFile}.txt", contenuto == "" ? "File vuoto" : contenuto);
+
+            string leggiFile = File.ReadAllText($"{nomeFile}.txt");
+            Console.WriteLine(leggiFile);
         }
     }
 }
